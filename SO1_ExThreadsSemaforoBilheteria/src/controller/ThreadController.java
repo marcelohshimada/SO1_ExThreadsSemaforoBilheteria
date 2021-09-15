@@ -25,16 +25,17 @@ public class ThreadController extends Thread {
 
 		// INÍCIO DA SEÇÃO CRÍTICA
 		
-//		try {
-//			mutex.acquire();
+		try {
+			mutex.acquire();
 			validação();
-//		} catch (InterruptedException e) {
-//			e.printStackTrace();
-//		} finally {
-//			mutex.release();
-//		}
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		} finally {
+			mutex.release();
+		}
 
 		// FIM DA SEÇÃO CRÍTICA
+		
 	}
 
 	private void login() {
